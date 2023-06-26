@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>3d image slider</title>
+    <style media="screen">
+        body {
+            margin: 0;
+            background: #EEE;
+            user-select: none;
+            font-family: sans-serif;
+        }
+
+        #slider {
+            position: relative;
+            width: 50%;
+            height: 32vw;
+            margin: 150px auto;
+            font-family: 'Helvetica Neue', sans-serif;
+            perspective: 1400px;
+            transform-style: preserve-3d;
+        }
+
+        input[type=radio] {
+            position: relative;
+            top: 108%;
+            left: 50%;
+            width: 18px;
+            height: 18px;
+            margin: 0 15px 0 0;
+            opacity: 0.4;
+            transform: translateX(-83px);
+            cursor: pointer;
+        }
+
+        input[type=radio]:nth-child(5) {
+            margin-right: 0px;
+        }
+
+        input[type=radio]:checked {
+            opacity: 1;
+        }
+
+        #slider label,
+        #slider label img {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 0;
+            top: 0;
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 400ms ease;
+        }
+
+        /* Slider Functionality */
+        /* Active Slide */
+        #s1:checked ~ #slide1,
+        #s2:checked ~ #slide2,
+        #s3:checked ~ #slide3,
+        #s4:checked ~ #slide4,
+        #s5:checked ~ #slide5,
+        #s6:checked ~ #slide6,
+        #s7:checked ~ #slide7,
+        #s8:checked ~ #slide8,
+        #s9:checked ~ #slide9,
+        #s10:checked ~ #slide10 {
+            box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
+            transform: translate3d(0%, 0, 0px);
+        }
+
+        /* Next Slide */
+        #s1:checked ~ #slide2,
+        #s2:checked ~ #slide3,
+        #s3:checked ~ #slide4,
+        #s4:checked ~ #slide5,
+        #s5:checked ~ #slide6,
+        #s6:checked ~ #slide7,
+        #s7:checked ~ #slide8,
+        #s8:checked ~ #slide9,
+        #s9:checked ~ #slide10,
+        #s10:checked ~ #slide1{
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
+            transform: translate3d(20%, 0, -100px);
+        }
+
+        /* Next to Next Slide */
+        #s1:checked ~ #slide3,
+        #s2:checked ~ #slide4,
+        #s3:checked ~ #slide5,
+        #s4:checked ~ #slide6,
+        #s5:checked ~ #slide7,
+        #s6:checked ~ #slide8,
+        #s7:checked ~ #slide9,
+        #s8:checked ~ #slide10,
+        #s9:checked ~ #slide1,
+        #s10:checked ~ #slide2{
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            transform: translate3d(40%, 0, -250px);
+        }
+
+        /* Previous to Previous Slide */
+        #s1:checked ~ #slide9,
+        #s2:checked ~ #slide10,
+        #s3:checked ~ #slide1,
+        #s4:checked ~ #slide2,
+        #s5:checked ~ #slide3,
+        #s6:checked ~ #slide4,
+        #s7:checked ~ #slide5,
+        #s8:checked ~ #slide6,
+        #s9:checked ~ #slide7,
+        #s10:checked ~ #slide8{
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+            transform: translate3d(-40%, 0, -250px);
+        }
+
+        /* Previous Slide */
+        #s1:checked ~ #slide10,
+        #s2:checked ~ #slide1,
+        #s3:checked ~ #slide2,
+        #s4:checked ~ #slide3,
+        #s5:checked ~ #slide4,
+        #s6:checked ~ #slide5,
+        #s7:checked ~ #slide6,
+        #s8:checked ~ #slide7,
+        #s9:checked ~ #slide8,
+        #s10:checked ~ #slide9{
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3), 0 2px 2px rgba(0, 0, 0, 0.2);
+            transform: translate3d(-20%, 0, -100px);
+        }
+    </style>
+</head>
+
+<body>
+<section id="slider">
+    <input checked id="s1" name="slider" type="radio">
+    <input id="s2" name="slider" type="radio">
+    <input id="s3" name="slider" type="radio">
+    <input id="s4" name="slider" type="radio">
+    <input id="s5" name="slider" type="radio">
+    <input id="s6" name="slider" type="radio">
+    <input id="s7" name="slider" type="radio">
+    <input id="s8" name="slider" type="radio">
+    <input id="s9" name="slider" type="radio">
+    <input id="s10" name="slider" type="radio">
+
+    <label for="s1" id="slide1"><img alt="" src="assert/images/assignment%201.png"></label>
+    <label for="s2" id="slide2"><img alt="" src="assert/images/assignment%202.png"></label>
+    <label for="s3" id="slide3"><img alt="" src="assert/images/assignment%203.png"></label>
+    <label for="s4" id="slide4"><img alt="" src="assert/images/assignment%204.png"></label>
+    <label for="s5" id="slide5"><img alt="" src="assert/images/assignment%205.png"></label>
+    <label for="s6" id="slide6"><img alt="" src="assert/images/assignment%2006.png"></label>
+    <!--<label for="s7" id="slide7"><img alt="" src="assert/images/assignment%207.jpg"></label>-->
+    <label for="s8" id="slide8"><img alt="" src="assert/images/assignment%2007.png"></label>
+    <label for="s9" id="slide9"><img alt="" src="assert/images/assignment%209.gif"></label>
+    <label for="s10" id="slide10"><img alt="" src="assert/images/assignment%2010.png"></label>
+</section>
+
+</body>
+
+</html>

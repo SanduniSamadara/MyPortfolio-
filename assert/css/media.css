@@ -1,0 +1,139 @@
+@media all and  (max-width: 1480px) {
+    header {
+        padding: 12px 2.5%;
+        transition: .1s;
+    }
+
+    header.sticky {
+        padding: 10px 2.5%;
+        transition: .1s;
+    }
+
+    section {
+        padding: 100px 3% 60px;
+    }
+
+    .end {
+        padding: 15px 3%;
+    }
+}
+
+@media all and (max-width: 1100px) {
+    :root {
+        --big-font: 4rem;
+        --h2-font: 2.5rem;
+        --p-font: 1rem;
+        transition: .1s;
+    }
+
+    .homeText h3 {
+        font-size: 2.5rem;
+    }
+
+    .home {
+        height: 87vh;
+    }
+}
+
+@media all and(max-width: 920px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        text-align: center;
+        order: 2;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+@media all and (max-width: 450px) {
+    #menuIcon {
+        display: block;
+    }
+
+    .navList{
+        position: absolute;
+        top: -1000px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        transition: all .45s ease;
+    }
+
+    .navList a {
+        display: block;
+        margin: 17px;
+        font-size: 20px;
+        transition: all .45s ease;
+        color: var(--text-color);
+    }
+
+    .navList a:hover {
+        color: var(--main-color);
+    }
+
+    .navList a.active {
+        color: var(--text-color);
+    }
+
+    .navList .open {
+        top: 100%;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .homeText h2{
+        font-size:2.6rem;
+    }
+
+    .home-content h3{
+        font-size:5rem;
+    }
+
+    .home-img img{
+        width: 40vw;
+        margin-top:4rem;
+    }
+
+    .about{
+        flex-direction: column-reverse;
+    }
+
+    .about-img{
+        width:40vw;
+        margin-top:4rem;
+    }
+
+    #projects {
+        position: relative;
+        height: 68vh;
+    }
+
+    #assignments {
+        top: 20px;
+        font-size: 20px;
+    }
+
+    #projects img {
+        height: 150px;
+        width: 200px;
+    }
+
+}
+*/
